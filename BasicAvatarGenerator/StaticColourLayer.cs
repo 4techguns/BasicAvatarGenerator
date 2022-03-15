@@ -1,12 +1,11 @@
 ﻿using SixLabors.ImageSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BasicAvatarGenerator
 {
+    /// <summary>
+    /// A class that is similar to <see cref="RandomColourLayer"/>, but lets you specify the colour.
+    /// Be cautious that this does require ImageSharp to be present in your project to get the Color class.
+    /// </summary>
     public class StaticColourLayer : ILayer
     {
         private readonly int _xPos;

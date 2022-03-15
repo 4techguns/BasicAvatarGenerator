@@ -3,6 +3,10 @@ using SixLabors.ImageSharp.PixelFormats;
 
 namespace BasicAvatarGenerator
 {
+    /// <summary>
+    /// A type of <see cref="ILayer"/> that picks from a list of images, provided using path strings.
+    /// <example><code>RandomImageLayer l = new(0, 0, 128, 128, "image0.png", "image1.png");</code></example>
+    /// </summary>
     public class RandomImageLayer : ILayer
     {
         private readonly int _xPos;

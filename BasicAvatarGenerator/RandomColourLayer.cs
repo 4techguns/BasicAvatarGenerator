@@ -2,6 +2,9 @@
 
 namespace BasicAvatarGenerator
 {
+    /// <summary>
+    /// A type of <see cref="ILayer"/> that generates a random colour.
+    /// </summary>
     public class RandomColourLayer : ILayer
     {
         private readonly int _xPos;

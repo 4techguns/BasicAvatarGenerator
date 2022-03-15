@@ -3,7 +3,7 @@
 namespace BasicAvatarGenerator
 {
     /// <summary>
-    /// A stub interface.
+    /// An interface that many layer classes build off of.
     /// </summary>
     public interface ILayer
     {
