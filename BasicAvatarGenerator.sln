@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAvatarGenerator", "BasicAvatarGenerator\BasicAvatarGenerator.csproj", "{F228105C-5E41-4DFF-A735-C3CC6AC6A457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAvatarGenerator.Tests", "BasicAvatarGenerator.Tests\BasicAvatarGenerator.Tests.csproj", "{940AF4BE-E2DC-4817-81E5-9CC9E6514A6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F228105C-5E41-4DFF-A735-C3CC6AC6A457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F228105C-5E41-4DFF-A735-C3CC6AC6A457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F228105C-5E41-4DFF-A735-C3CC6AC6A457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F228105C-5E41-4DFF-A735-C3CC6AC6A457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{940AF4BE-E2DC-4817-81E5-9CC9E6514A6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940AF4BE-E2DC-4817-81E5-9CC9E6514A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940AF4BE-E2DC-4817-81E5-9CC9E6514A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940AF4BE-E2DC-4817-81E5-9CC9E6514A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD6F6D06-E788-4E3D-91AD-579B1690527E}
+	EndGlobalSection
+EndGlobal
