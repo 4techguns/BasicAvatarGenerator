@@ -4,8 +4,10 @@ It provides a simple API, and uses ImageSharp as its only dependency.
 
 # Getting started
 
-At the moment, this library does not yet have a NuGet package, but we will have one very soon.
-You can add this library to your project by simply cloning this repository, adding it to your solution, then adding a reference to it in your main project.
+Adding this library to your project should be as simple as adding the BasicAvatarGenerator NuGet package in your project.
+
+Using the .NET CLI:
+`dotnet add MyProjectName package BasicAvatarGenerator --version 1.0.0`
 
 # Usage
 
