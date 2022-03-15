@@ -1,4 +1,4 @@
-# BasicAvatarGenerator
+# BasicAvatarGenerator [![CodeFactor](https://www.codefactor.io/repository/github/4techguns/basicavatargenerator/badge)](https://www.codefactor.io/repository/github/4techguns/basicavatargenerator)
 A basic image generator that lets you create avatars with ease, and can be useful for any case when you're providing a service and need an avatar generated.
 It provides a simple API, and uses ImageSharp as its only dependency.
 
