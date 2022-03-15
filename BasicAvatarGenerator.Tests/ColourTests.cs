@@ -5,7 +5,7 @@ using SixLabors.ImageSharp;
 namespace BasicAvatarGenerator.Tests
 {
     [TestClass]
-    public class ImageGenTests
+    public class ColourTests
     {
         [TestMethod]
         [DataRow(128, DisplayName = "128x128")]

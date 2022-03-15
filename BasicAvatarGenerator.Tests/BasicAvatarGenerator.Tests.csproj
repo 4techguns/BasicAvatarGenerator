@@ -18,4 +18,10 @@
     <ProjectReference Include="..\BasicAvatarGenerator\BasicAvatarGenerator.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="py_template.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
