@@ -4,10 +4,8 @@ using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.Drawing;
 using SixLabors.ImageSharp.Drawing.Processing;
 
-
 namespace BasicAvatarGenerator
 {
-
     public class Avatar
     {
         private readonly int _width;
@@ -52,6 +50,5 @@ namespace BasicAvatarGenerator
         {
             Draw(); ToFile(name);
         }
-
     }
 }
