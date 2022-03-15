@@ -26,4 +26,4 @@ avatar.FullGenerate("myAvatar.png");
 Peep the wiki for more advanced examples!
 
 # Contributing
-Please see CONTRIBUTING.md for details on how to contribute to this library, and our code of conduct.
+Please see [CONTRIBUTING.md](https://github.com/4techguns/BasicAvatarGenerator/blob/master/CONTRIBUTING.md) for details on how to contribute to this library, and our code of conduct.
