@@ -34,10 +34,10 @@ namespace BasicAvatarGenerator
         {
             foreach (ILayer layer in _layers)
             {
-                if (layer.GetType().Name == "RandomColourLayer")
+                if (layer.GetType().Name == "RandomColorLayer")
                     _base.Mutate(
                         x => x.Fill(layer.GetColour(), layer.GetRect()));
-                else if (layer.GetType().Name == "StaticColourLayer")
+                else if (layer.GetType().Name == "StaticColorLayer")
                     _base.Mutate(
                         x => x.Fill(layer.GetColour(), layer.GetRect())); // same thing, just different functionality
                 else if (layer.GetType().Name == "RandomImageLayer")
