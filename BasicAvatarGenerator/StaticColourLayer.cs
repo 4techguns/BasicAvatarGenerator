@@ -30,5 +30,6 @@ namespace BasicAvatarGenerator
         public Rectangle GetRect() => _rect;
 
         public Image GetImg() => null;
+        public Point PositionToPoint() => new Point(_xPos, _yPos);
     }
 }

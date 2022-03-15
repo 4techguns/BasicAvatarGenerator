@@ -10,5 +10,6 @@ namespace BasicAvatarGenerator
         Color GetColour();
         Rectangle GetRect();
         Image GetImg();
+        Point PositionToPoint();
     }
 }

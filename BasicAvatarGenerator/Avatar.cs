@@ -44,7 +44,7 @@ namespace BasicAvatarGenerator
                         x => x.Fill(layer.GetColour(), layer.GetRect())); // same thing, just different functionality
                 else if (layer.GetType().Name == "RandomImageLayer")
                     _base.Mutate(
-                        x => x.DrawImage(layer.GetImg(), 1.0f));
+                        x => x.DrawImage(layer.GetImg(), layer.PositionToPoint(), 1.0f));
             }
         }
         public void ToFile(string name) => _base.Save(name);
