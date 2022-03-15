@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BasicAvatarGenerator;
+using SixLabors.ImageSharp;
 
 namespace BasicAvatarGenerator.Tests
 {
@@ -18,6 +19,20 @@ namespace BasicAvatarGenerator.Tests
 
             av.Draw();
             av.ToFile($"TestFile{size}.png");
+        }
+
+        [TestMethod]
+        [DataRow(128, DisplayName = "128x128")]
+        [DataRow(256, DisplayName = "256x256")]
+        [DataRow(512, DisplayName = "512x512")]
+        [DataRow(1024, DisplayName = "1024x1024")]
+        public void GenerateSolidColouredImage(int size)
+        {
+            StaticColourLayer l0 = new(0, 0, size, size, Color.Cyan);
+            Avatar av = new(size, size, l0);
+
+            av.Draw();
+            av.ToFile($"TestSolidCFile{size}.png");
         }
 
         [TestMethod]
