@@ -30,7 +30,7 @@ namespace BasicAvatarGenerator.Tests
         [TestMethod]
         public void SingleColourBehindImage()
         {
-            RandomColourLayer layerBehind = new(0, 0, 512, 512);
+            RandomColorLayer layerBehind = new(0, 0, 512, 512);
             RandomImageLayer layer = new(0, 0, "py_template.png");
             Avatar av = new(512, 512, layerBehind, layer);
 
@@ -40,7 +40,7 @@ namespace BasicAvatarGenerator.Tests
         [TestMethod]
         public void ColourBehindStackedImages()
         {
-            RandomColourLayer layerBehind = new(0, 0, 512, 512);
+            RandomColorLayer layerBehind = new(0, 0, 512, 512);
             RandomImageLayer layer = new(-256, 0, "py_template.png");
             RandomImageLayer layer2 = new(0, 0, "py_template.png");
             RandomImageLayer layer3 = new(256, 0, "py_template.png");
@@ -52,10 +52,10 @@ namespace BasicAvatarGenerator.Tests
         [TestMethod]
         public void StackedColoursBehindImage()
         {
-            RandomColourLayer layerBehind = new(0, 0, 512, 512);
-            RandomColourLayer layerBehind2 = new(32, 0, 512, 512);
-            RandomColourLayer layerBehind3 = new(64, 0, 512, 512);
-            RandomColourLayer layerBehind4 = new(72, 0, 512, 512);
+            RandomColorLayer layerBehind = new(0, 0, 512, 512);
+            RandomColorLayer layerBehind2 = new(32, 0, 512, 512);
+            RandomColorLayer layerBehind3 = new(64, 0, 512, 512);
+            RandomColorLayer layerBehind4 = new(72, 0, 512, 512);
             RandomImageLayer layer = new(0, 0, "py_template.png");
             Avatar av = new(512, 512, layerBehind, layerBehind2, layerBehind3, layerBehind4, layer);
 
@@ -65,10 +65,10 @@ namespace BasicAvatarGenerator.Tests
         [TestMethod]
         public void StackedColoursBehindStackedImages()
         {
-            RandomColourLayer layerBehind = new(0, 0, 512, 512);
-            RandomColourLayer layerBehind2 = new(32, 0, 512, 512);
-            RandomColourLayer layerBehind3 = new(64, 0, 512, 512);
-            RandomColourLayer layerBehind4 = new(72, 0, 512, 512);
+            RandomColorLayer layerBehind = new(0, 0, 512, 512);
+            RandomColorLayer layerBehind2 = new(32, 0, 512, 512);
+            RandomColorLayer layerBehind3 = new(64, 0, 512, 512);
+            RandomColorLayer layerBehind4 = new(72, 0, 512, 512);
             RandomImageLayer layer = new(-256, 0, "py_template.png");
             RandomImageLayer layer2 = new(0, 0, "py_template.png");
             RandomImageLayer layer3 = new(256, 0, "py_template.png");
