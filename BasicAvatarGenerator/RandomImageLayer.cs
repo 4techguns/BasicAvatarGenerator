@@ -1,4 +1,5 @@
-﻿using SixLabors.ImageSharp;
+﻿using SixLabors.Fonts;
+using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 
 namespace BasicAvatarGenerator
@@ -22,9 +23,12 @@ namespace BasicAvatarGenerator
 
         public Color GetColour() => Color.White;
 
+        public Font GetFont() => throw new NotImplementedException();
+
         public Image GetImg() => Image.Load(Images[new Random().Next(Images.Length)]);
 
-        public Rectangle GetRect() => new Rectangle(0, 0, 0, 0); // Stub method
-        public Point PositionToPoint() => new Point(_xPos, _yPos);
+        public Rectangle GetRect() => throw new NotImplementedException();
+        public Point PositionToPoint() => new(_xPos, _yPos);
+        public string GetText() => string.Empty;
     }
 }

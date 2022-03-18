@@ -1,4 +1,5 @@
-﻿using SixLabors.ImageSharp;
+﻿using SixLabors.Fonts;
+using SixLabors.ImageSharp;
 
 namespace BasicAvatarGenerator
 {
@@ -29,7 +30,9 @@ namespace BasicAvatarGenerator
 
         public Rectangle GetRect() => _rect;
 
-        public Image GetImg() => null;
-        public Point PositionToPoint() => new Point(_xPos, _yPos);
+        public Image GetImg() => throw new NotImplementedException();
+        public Font GetFont() => throw new NotImplementedException();
+        public Point PositionToPoint() => new(_xPos, _yPos);
+        public string GetText() => string.Empty;
     }
 }

@@ -3,6 +3,8 @@ using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.Drawing;
 using SixLabors.ImageSharp.Drawing.Processing;
+using SixLabors.Fonts;
+using System.Reflection;
 
 namespace BasicAvatarGenerator
 {
@@ -55,6 +57,14 @@ namespace BasicAvatarGenerator
         /// </summary>
         public void ClearLayers() => _layers.RemoveAll(layer => true);
 
+        public DebugInfo GetDebugInfo() => new DebugInfo
+        {
+            debugVersion = typeof(Avatar).GetTypeInfo().Assembly.GetCustomAttribute<AssemblyFileVersionAttribute>().Version,
+            imageHeight = _height,
+            imageWidth = _width,
+            layers = _layers
+        };
+
         /// <summary>
         /// This generates the image. You can also use the unified method <seealso cref="FullGenerate(string)"/>.
         /// </summary>
@@ -71,6 +81,9 @@ namespace BasicAvatarGenerator
                 else if (layer.GetType().Name == "RandomImageLayer")
                     _base.Mutate(
                         x => x.DrawImage(layer.GetImg(), layer.PositionToPoint(), 1.0f));
+                else if (layer.GetType().Name == "TextLayer")
+                    _base.Mutate(
+                        x => x.DrawText(new TextOptions(layer.GetFont()), layer.GetText(), layer.GetColour()));
             }
         }
         public void ToFile(string name) => _base.Save(name);

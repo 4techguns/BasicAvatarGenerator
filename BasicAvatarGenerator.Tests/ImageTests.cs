@@ -1,5 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SixLabors.Fonts;
 using BasicAvatarGenerator;
+using SixLabors.ImageSharp;
+using System.Reflection;
 
 namespace BasicAvatarGenerator.Tests
 {
@@ -75,6 +78,29 @@ namespace BasicAvatarGenerator.Tests
             Avatar av = new(512, 512, layerBehind, layerBehind2, layerBehind3, layerBehind4, layer, layer2, layer3);
 
             av.FullGenerate("coloursBehindImagesTest.png");
+        }
+
+        [TestCategory("Fonts")]
+        [TestMethod]
+        public void Text()
+        {
+            FontCollection collection = new();
+            FontFamily family = collection.Add("Fonts/PermanentMarker-Regular.ttf");
+            Font font = family.CreateFont(24, FontStyle.Italic);
+            
+            Avatar av = new(512, 512);
+            DebugInfo dbg = av.GetDebugInfo();
+
+            av.AddLayer(new TextLayer(0, 0, font, 
+                $"Hello world!" +
+                $"\n-- DEBUG INFO --" +
+                $"\nBasicAvatarGenerator v{dbg.debugVersion}" +
+                $"\nSize: {dbg.imageWidth}x{dbg.imageHeight}" +
+                $"\nLayers (before rendering this text): {dbg.layers.Count}", 
+                Color.White)
+            );
+
+            av.FullGenerate("TextTest.png");
         }
     }
 }

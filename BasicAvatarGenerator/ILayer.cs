@@ -1,4 +1,5 @@
-﻿using SixLabors.ImageSharp;
+﻿using SixLabors.Fonts;
+using SixLabors.ImageSharp;
 
 namespace BasicAvatarGenerator
 {
@@ -11,5 +12,7 @@ namespace BasicAvatarGenerator
         Rectangle GetRect();
         Image GetImg();
         Point PositionToPoint();
+        Font GetFont();
+        string GetText();
     }
 }
