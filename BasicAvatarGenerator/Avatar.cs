@@ -28,6 +28,12 @@ namespace BasicAvatarGenerator
         }
 
         /// <summary>
+        /// Gets all the layers in the current Avatar instance.
+        /// </summary>
+        /// <returns></returns>
+        public List<ILayer> GetLayers() => _layers;
+
+        /// <summary>
         /// This generates the image. You can also use the unified method <seealso cref="FullGenerate(string)"/>.
         /// </summary>
         public void Draw()
