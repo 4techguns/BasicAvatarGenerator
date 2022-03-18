@@ -30,8 +30,30 @@ namespace BasicAvatarGenerator
         /// <summary>
         /// Gets all the layers in the current Avatar instance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The list of layers</returns>
         public List<ILayer> GetLayers() => _layers;
+
+        /// <summary>
+        /// Adds a layer to the avatar.
+        /// </summary>
+        /// <param name="layer">The layer to add.</param>
+        public void AddLayer(ILayer layer) => _layers.Add(layer);
+
+        /// <summary>
+        /// Removes the specified layer. Can be useful for freeing memory, but it's more convenient to use <see cref="ClearLayers"/> instead.
+        /// </summary>
+        /// <param name="layer"></param>
+        public void RemoveLayer(ILayer layer) => _layers.Remove(layer);
+
+        /// <summary>
+        /// Removes the last added Layer.
+        /// </summary>
+        public void PopLayer() => _layers.RemoveAt(_layers.Count);
+
+        /// <summary>
+        /// Clears all layers in the avatar. Extremely useful for freeing memory when you don't need the avatar anymore.
+        /// </summary>
+        public void ClearLayers() => _layers.RemoveAll(layer => true);
 
         /// <summary>
         /// This generates the image. You can also use the unified method <seealso cref="FullGenerate(string)"/>.
