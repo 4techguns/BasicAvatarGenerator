@@ -11,7 +11,7 @@ namespace BasicAvatarGenerator
         private readonly int _width;
         private readonly int _height;
         private readonly Image<Rgba32> _base;
-        private readonly ILayer[] _layers;
+        private readonly List<ILayer> _layers;
 
         /// <summary>
         /// Creates a new avatar image with the specified layers and dimensions.
@@ -24,7 +24,7 @@ namespace BasicAvatarGenerator
             _width = width;
             _height = height;
             _base = new(_width, _height);
-            _layers = layers;
+            _layers = layers.ToList();
         }
 
         /// <summary>
