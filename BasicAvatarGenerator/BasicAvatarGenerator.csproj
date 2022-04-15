@@ -9,7 +9,7 @@
     <RepositoryUrl>https://github.com/4techguns/BasicAvatarGenerator</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Description>An image generator with layers, designed for avatar generation.</Description>
-    <Version>2.3.0</Version>
+    <Version>2.4.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
