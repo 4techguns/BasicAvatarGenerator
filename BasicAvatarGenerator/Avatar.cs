@@ -30,6 +30,46 @@ namespace BasicAvatarGenerator
         }
 
         /// <summary>
+        /// Creates a new avatar image with the specified layers and dimensions.
+        /// </summary>
+        /// <param name="scale">How wide and tall the image will be.</param>
+        /// <param name="layers">Layers that will be put on the base image.</param>
+        public Avatar(int scale, params ILayer[] layers)
+        {
+            _width = scale;
+            _height = scale;
+            _base = new(_width, _height);
+            _layers = layers.ToList();
+        }
+
+        /// <summary>
+        /// Creates a new avatar image with the specified layers and dimensions.
+        /// </summary>
+        /// <param name="width">How long the image will be.</param>
+        /// <param name="height">How tall the image will be.</param>
+        /// <param name="layers">Layers that will be put on the base image.</param>
+        public Avatar(int width, int height, List<ILayer> layers)
+        {
+            _width = width;
+            _height = height;
+            _base = new(_width, _height);
+            _layers = layers;
+        }
+
+        /// <summary>
+        /// Creates a new avatar image with the specified layers and dimensions.
+        /// </summary>
+        /// <param name="scale">How wide and tall the image will be.</param>
+        /// <param name="layers">Layers that will be put on the base image.</param>
+        public Avatar(int scale, List<ILayer> layers)
+        {
+            _width = scale;
+            _height = scale;
+            _base = new(_width, _height);
+            _layers = layers;
+        }
+
+        /// <summary>
         /// Gets all the layers in the current Avatar instance.
         /// </summary>
         /// <returns>The list of layers</returns>
