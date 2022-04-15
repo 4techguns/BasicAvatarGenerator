@@ -96,7 +96,7 @@ namespace BasicAvatarGenerator.Tests
                 $"\n-- DEBUG INFO --" +
                 $"\nBasicAvatarGenerator v{dbg.debugVersion}" +
                 $"\nSize: {dbg.imageWidth}x{dbg.imageHeight}" +
-                $"\nLayers (before rendering this text): {dbg.layers.Count}", 
+                $"\nLayers (before rendering this text): {dbg.layers?.Count}", 
                 Color.White)
             );
 
