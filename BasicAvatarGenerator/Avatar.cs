@@ -72,18 +72,23 @@ namespace BasicAvatarGenerator
         {
             foreach (ILayer layer in _layers)
             {
-                if (layer.GetType().Name == "RandomColorLayer")
-                    _base.Mutate(
-                        x => x.Fill(layer.GetColour(), layer.GetRect()));
-                else if (layer.GetType().Name == "StaticColorLayer")
-                    _base.Mutate(
-                        x => x.Fill(layer.GetColour(), layer.GetRect())); // same thing, just different functionality
-                else if (layer.GetType().Name == "RandomImageLayer")
-                    _base.Mutate(
-                        x => x.DrawImage(layer.GetImg(), layer.PositionToPoint(), 1.0f));
-                else if (layer.GetType().Name == "TextLayer")
-                    _base.Mutate(
-                        x => x.DrawText(new TextOptions(layer.GetFont()), layer.GetText(), layer.GetColour()));
+                switch (layer.GetType().Name)
+                {
+                    case "StaticColorLayer":
+                    case "RandomColorLayer":
+                        _base.Mutate(
+                            x => x.Fill(layer.GetColour(), layer.GetRect()));
+                        break;
+                    case "RandomImageLayer":
+                        _base.Mutate(
+                            x => x.DrawImage(layer.GetImg(), layer.PositionToPoint(), 1.0f));
+                        break;
+                    case "TextLayer":
+                        _base.Mutate(
+                            x => x.DrawText(new TextOptions(layer.GetFont()), layer.GetText(), layer.GetColour()));
+                        break;
+                    
+                }
             }
         }
         public void ToFile(string name) => _base.Save(name);
