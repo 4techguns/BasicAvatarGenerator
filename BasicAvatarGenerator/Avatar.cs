@@ -112,18 +112,18 @@ namespace BasicAvatarGenerator
         {
             foreach (ILayer layer in _layers)
             {
-                switch (layer.GetType().Name)
+                switch (layer)
                 {
-                    case "StaticColorLayer":
-                    case "RandomColorLayer":
+                    case StaticColorLayer:
+                    case RandomColorLayer:
                         _base.Mutate(
                             x => x.Fill(layer.GetColour(), layer.GetRect()));
                         break;
-                    case "RandomImageLayer":
+                    case RandomImageLayer:
                         _base.Mutate(
                             x => x.DrawImage(layer.GetImg(), layer.PositionToPoint(), 1.0f));
                         break;
-                    case "TextLayer":
+                    case TextLayer:
                         _base.Mutate(
                             x => x.DrawText(new TextOptions(layer.GetFont()), layer.GetText(), layer.GetColour()));
                         break;
