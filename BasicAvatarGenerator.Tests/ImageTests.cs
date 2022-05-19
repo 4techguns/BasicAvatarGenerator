@@ -89,14 +89,9 @@ namespace BasicAvatarGenerator.Tests
             Font font = family.CreateFont(24, FontStyle.Italic);
             
             Avatar av = new(512, 512);
-            DebugInfo dbg = av.GetDebugInfo();
 
             av.AddLayer(new TextLayer(0, 0, font, 
-                $"Hello world!" +
-                $"\n-- DEBUG INFO --" +
-                $"\nBasicAvatarGenerator v{dbg.debugVersion}" +
-                $"\nSize: {dbg.imageWidth}x{dbg.imageHeight}" +
-                $"\nLayers (before rendering this text): {dbg.layers?.Count}", 
+                $"Hello world!",
                 Color.White)
             );
 

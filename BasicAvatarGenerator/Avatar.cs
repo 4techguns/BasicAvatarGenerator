@@ -113,14 +113,6 @@ namespace BasicAvatarGenerator
         /// </summary>
         public void ClearLayers() => _layers.RemoveAll(layer => true);
 
-        public DebugInfo GetDebugInfo() => new DebugInfo
-        {
-            debugVersion = typeof(Avatar).GetTypeInfo().Assembly.GetCustomAttribute<AssemblyFileVersionAttribute>()?.Version ?? "Unknown",
-            imageHeight = _height,
-            imageWidth = _width,
-            layers = _layers
-        };
-
         /// <summary>
         /// This generates the image. You can also use the unified method <seealso cref="FullGenerate(string)"/>.
         /// </summary>
