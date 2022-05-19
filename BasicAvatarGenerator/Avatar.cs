@@ -8,8 +8,9 @@ using System.Reflection;
 
 namespace BasicAvatarGenerator
 {
-    public class Avatar
+    public class Avatar : IDisposable
     {
+        private bool disposed = false;
         private readonly int _width;
         private readonly int _height;
         private readonly Image<Rgba32> _base;
@@ -81,6 +82,21 @@ namespace BasicAvatarGenerator
         /// <param name="layer">The layer to add.</param>
         public void AddLayer(ILayer layer) => _layers.Add(layer);
 
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if(!this.disposed)
+            {
+                disposed = true;
+            }
+        }
+
         /// <summary>
         /// Removes the specified layer. Can be useful for freeing memory, but it's more convenient to use <see cref="ClearLayers"/> instead.
         /// </summary>
@@ -135,6 +151,11 @@ namespace BasicAvatarGenerator
         public void FullGenerate(string name)
         {
             Draw(); ToFile(name);
+        }
+
+        ~Avatar()
+        {
+            Dispose(disposing: false);
         }
     }
 }
